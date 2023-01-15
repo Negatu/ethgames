@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Toggler</title>
+  <style>
+    #color-box {
+      width: 100px; 
+      height: 100px;
+      background-color: blue;
+      border-radius: 20px;
+    }
+    #toggle-button {
+      float: left;
+      margin-right: 20px;
+    }
+    #box-container{
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Toggler</h1>
+  <div id="box-container">
+    <button id="toggle-button">Toggle Color</button>
+    <div id="color-box"></div>
+  </div>
+  <script>
+    var colorBox = document.getElementById("color-box");
+    var toggleButton = document.getElementById("toggle-button");
+    var colors = ["blue", "yellow", "red"];
+    var currentColorIndex = 0;
+
+    toggleButton.addEventListener("click", function(){
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+      colorBox.style.backgroundColor = colors[currentColorIndex];
+    });
+  </script>
+</body>
+</html>
